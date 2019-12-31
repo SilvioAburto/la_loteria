@@ -13,7 +13,7 @@ class App extends Component {
 
   display_photo(){
 
-    let audio_gallo = new Audio("/el_gallo.mp3")
+    let audio_gallo = new Audio("/la_loteria/el_gallo.mp3")
     const start_gallo = () => {
       audio_gallo.play()
     }
