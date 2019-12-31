@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "silvioaburto.github.io/la_loteria/static/css/main.4be1fe26.chunk.css",
+    "main.js": "silvioaburto.github.io/la_loteria/static/js/main.5b31c8eb.chunk.js",
+    "main.js.map": "silvioaburto.github.io/la_loteria/static/js/main.5b31c8eb.chunk.js.map",
+    "runtime-main.js": "silvioaburto.github.io/la_loteria/static/js/runtime-main.32ecbf0b.js",
+    "runtime-main.js.map": "silvioaburto.github.io/la_loteria/static/js/runtime-main.32ecbf0b.js.map",
+    "static/js/2.cd5ddd3b.chunk.js": "silvioaburto.github.io/la_loteria/static/js/2.cd5ddd3b.chunk.js",
+    "static/js/2.cd5ddd3b.chunk.js.map": "silvioaburto.github.io/la_loteria/static/js/2.cd5ddd3b.chunk.js.map",
+    "index.html": "silvioaburto.github.io/la_loteria/index.html",
+    "precache-manifest.2bafd89ac55d078dea3b166df8912562.js": "silvioaburto.github.io/la_loteria/precache-manifest.2bafd89ac55d078dea3b166df8912562.js",
+    "service-worker.js": "silvioaburto.github.io/la_loteria/service-worker.js",
+    "static/css/main.4be1fe26.chunk.css.map": "silvioaburto.github.io/la_loteria/static/css/main.4be1fe26.chunk.css.map",
+    "static/js/2.cd5ddd3b.chunk.js.LICENSE": "silvioaburto.github.io/la_loteria/static/js/2.cd5ddd3b.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.32ecbf0b.js",
+    "static/js/2.cd5ddd3b.chunk.js",
+    "static/css/main.4be1fe26.chunk.css",
+    "static/js/main.5b31c8eb.chunk.js"
+  ]
+}
