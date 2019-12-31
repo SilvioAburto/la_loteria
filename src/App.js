@@ -64,7 +64,7 @@ class App extends Component {
   
     for(let i = 0; i < images.length; i++ ) {
       setTimeout(() => {
-        let card_audio = new Audio("/"+images[i].src + ".mp3")
+        let card_audio = new Audio("/la_loteria/"+images[i].src + ".mp3")
         card_audio.play();
         console.log(images[i].src)
         const img_src = images[i].src
