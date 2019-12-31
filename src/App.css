@@ -63,7 +63,7 @@
 }
 
 .el_gallo {
-  background-image: url(/el_gallo.jpg);
+  background-image: url(/la_loteria/el_gallo.jpg);
   float: none;
   position: absolute;
   margin-left:37.5%;
@@ -81,7 +81,7 @@
 }
 
 .el_diablito {
-  background-image: url(/el_diablito.jpg);
+  background-image: url(/la_loteria/el_diablito.jpg);
   float: none;
   position: absolute;
   margin-left:37.5%;
@@ -99,7 +99,7 @@
 }
 
 .la_dama {
-  background-image: url(/la_dama.jpg);
+  background-image: url(/la_loteria/la_dama.jpg);
   float: none;
   position: absolute;
   margin-left:37.5%;
@@ -117,7 +117,7 @@
 }
 
 .el_catrin {
-  background-image: url(/el_catrin.jpg);
+  background-image: url(/la_loteria/el_catrin.jpg);
   float: none;
   position: absolute;
   margin-left:37.5%;
@@ -135,7 +135,7 @@
 }
 
 .el_paraguas {
-  background-image: url(/el_paraguas.jpg);
+  background-image: url(la_loteria/el_paraguas.jpg);
   float: none;
   position: absolute;
   margin-left:37.5%;
@@ -153,7 +153,7 @@
 }
 
 .la_sirena {
-  background-image: url(/la_sirena.jpg);
+  background-image: url(/la_loteria/la_sirena.jpg);
   float: none;
   position: absolute;
   margin-left:37.5%;
