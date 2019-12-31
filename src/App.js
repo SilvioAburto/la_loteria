@@ -18,12 +18,12 @@ class App extends Component {
       audio_gallo.play()
     }
 
-    let audio_dama = new Audio("/la_dama.mp3")
+    let audio_dama = new Audio("la_loteria/la_dama.mp3")
     const start_dama = () => {
       audio_dama.play()
     }
 
-    let audio_diablito = new Audio("/el_diablito.mp3")
+    let audio_diablito = new Audio("la_loteria/el_diablito.mp3")
     const start_diablito = () => {
       audio_diablito.play()
     }

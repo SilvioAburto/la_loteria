@@ -135,7 +135,7 @@
 }
 
 .el_paraguas {
-  background-image: url(la_loteria/el_paraguas.jpg);
+  background-image: url(/la_loteria/el_paraguas.jpg);
   float: none;
   position: absolute;
   margin-left:37.5%;
