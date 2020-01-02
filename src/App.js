@@ -194,7 +194,7 @@ class App extends Component {
       //console.log(this.card_index);
       console.log(_this.state.card_index)
       console.log(_this.state.images.length)
-      render_sound("https://silvioaburto.github.io/la_loteria/"+ _this.state.images[_this.state.card_index].src +".mp3")
+      render_sound()
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
