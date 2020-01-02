@@ -2,7 +2,104 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
+const render_sound = (sound_url) => {
+  var music = new Audio(sound_url)
+  
+  //var chime = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
+  
+  var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
+  
+  var allAudio = []
+  
+  allAudio.push(music)
+  
+  //allAudio.push(chime)
+  
+  
+  
+  var tapped = function() {
+  
+  
+  // Play all audio files on the first tap and stop them immediately.
+  
+  if(allAudio) {
+  
+  for(var audio of allAudio) {
+  
+    audio.play()
+  
+    audio.pause()
+  
+    audio.currentTime = 0
+  
+  }
+  
+  allAudio = null
+  
+  }
+  
+  
+  
+  // We should be able to play music delayed now (not during the tap event).
+  
+  //messagediv.innerHTML = "Music starts in 2 seconds..."
+  
+  //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
+  
+  music.play()
+  
+  
+  }
+  
+  //Add this back if you want to listen to last sound
+  //document.body.addEventListener('touchstart', tapped, false)
+  //document.body.addEventListener('click', tapped, false)
+  
+  
+  
+  var stop = function() {
+  
+  music.pause()
+  
+  loop = null
+  
+  document.body.removeEventListener('touchstart', tapped, false)
+  
+  document.body.removeEventListener('click', tapped, false)
+  
+  }
+  
+  
+  
+  // Check if audio starts already unlocked by playing a blank wav.
+  
+  nothing.play().then(function() {
+  
+  //lockeddiv.innerHTML = "Audio started unlocked!"
+  
+  }).catch(function(){
+  
+  //lockeddiv.innerHTML = "Audio started locked :("
+  
+  })
+  
+  
+  
+  var loop = function() {
+  
+  music.play().then(function(){
+  
+  //	lockeddiv.innerHTML = "Audio is now unlocked!"
+  
+  })  
+  
+  }
+  
+    loop()
+  }
+  
+  
+  
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -66,115 +163,6 @@ class App extends Component {
     };
 }
 
-render_sound(){
-var music = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
-
-var chime = new Audio("http://curtastic.com/gold.wav")
-
-var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
-
-var allAudio = []
-
-allAudio.push(music)
-
-allAudio.push(chime)
-
-
-
-var tapped = function() {
-
-
-// Play all audio files on the first tap and stop them immediately.
-
-if(allAudio) {
-
-for(var audio of allAudio) {
-
-  audio.play()
-
-  audio.pause()
-
-  audio.currentTime = 0
-
-}
-
-allAudio = null
-
-}
-
-
-
-// We should be able to play music delayed now (not during the tap event).
-
-//messagediv.innerHTML = "Music starts in 2 seconds..."
-
-setTimeout(function() {
-
-//messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
-
-music.play()
-
-}, 2000)
-
-
-
-}
-
-document.body.addEventListener('touchstart', tapped, false)
-
-document.body.addEventListener('click', tapped, false)
-
-
-
-var stop = function() {
-
-music.pause()
-
-loop = null
-
-document.body.removeEventListener('touchstart', tapped, false)
-
-document.body.removeEventListener('click', tapped, false)
-
-}
-
-
-
-// Check if audio starts already unlocked by playing a blank wav.
-
-nothing.play().then(function() {
-
-//lockeddiv.innerHTML = "Audio started unlocked!"
-
-}).catch(function(){
-
-//lockeddiv.innerHTML = "Audio started locked :("
-
-})
-
-
-
-var loop = function() {
-
-// Try to play chimes whenever we want (not during user action).
-if(Math.random() < .01) {
-
-chime.play().then(function(){
-
-//	lockeddiv.innerHTML = "Audio is now unlocked!"
-
-})
-
-}
-
-setTimeout(loop, 16)
-
-}
-
-  loop()
-}
-
-
   getCardIndex(){
     return(this.state.card_index)
   }
@@ -193,6 +181,7 @@ setTimeout(loop, 16)
   imageLength(){
     return(this.state.images.length)
   }
+
   change_card(){
     var _this = this
     if(_this.state.card_index >= _this.state.images.length){
@@ -206,21 +195,7 @@ setTimeout(loop, 16)
       //console.log(this.card_index);
       console.log(_this.state.card_index)
       console.log(_this.state.images.length)
-
-      //const card_audio = new Audio()
-      //card_audio.play();
-      //card_audio.src = "la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3";
-      //card_audio.load();
-      //card_audio.play();
-      var card_audio = new Audio("http://curtastic.com/nightmare.mp3")
-      //var card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3")
-      var AllAudio = []
-      AllAudio.push(card_audio)
-      card_audio.play()
-      card_audio.pause()
-      card_audio.currentTime = 0
-      AllAudio = null
-      card_audio.play();
+      render_sound("https://silvioaburto.github.io/la_loteria/"+ _this.state.images[_this.state.card_index].src +".mp3")
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
