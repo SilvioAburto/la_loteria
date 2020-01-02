@@ -4,7 +4,8 @@ import './App.css';
 
 
 function render_sound(){
-  var music = new Audio("/la_loteria/la_sirena.mp3")
+  var music = new Audio("http://curtastic.com/nightmare.mp3")
+
   
   //var chime = new Audio("/la_sirena.mp3")
   
