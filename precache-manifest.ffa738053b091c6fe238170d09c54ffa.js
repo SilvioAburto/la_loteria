@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c63190f5930dd8e8f2a5e475d82de6f0",
+    "revision": "e0b595e6faa31801aac14362f95f4d5f",
     "url": "/la_loteria/index.html"
   },
   {
-    "revision": "836eca3d559795a6bcb1",
-    "url": "/la_loteria/static/css/main.70e0f73c.chunk.css"
+    "revision": "06a06eee35c05a93ac9f",
+    "url": "/la_loteria/static/css/main.406f7d6a.chunk.css"
   },
   {
     "revision": "db3986cf8f47e9f97fa7",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/la_loteria/static/js/2.ae23b39f.chunk.js.LICENSE"
   },
   {
-    "revision": "836eca3d559795a6bcb1",
-    "url": "/la_loteria/static/js/main.0d18e5c7.chunk.js"
+    "revision": "06a06eee35c05a93ac9f",
+    "url": "/la_loteria/static/js/main.a4b87bb7.chunk.js"
   },
   {
     "revision": "bd69547eb415d271bbf0",

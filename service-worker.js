@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/la_loteria/precache-manifest.b20ff1a46ce92f3ce2b41769882cd2c3.js"
+  "/la_loteria/precache-manifest.ffa738053b091c6fe238170d09c54ffa.js"
 );
 
 self.addEventListener('message', (event) => {
