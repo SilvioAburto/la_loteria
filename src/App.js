@@ -94,14 +94,14 @@ class App extends Component {
       //console.log(this.card_index);
       console.log(_this.state.card_index)
       console.log(_this.state.images.length)
-      let card_audio = new Audio("/"+_this.state.images[_this.state.card_index].src + ".mp3");
+      let card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3");
       card_audio.play();
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
       //document.getElementById(`img_id`).className = 
       // img_src;
-      document.getElementById(`img_id`).style.backgroundImage = "url('/" + _this.state.images[_this.state.card_index].src +".jpg')"
+      document.getElementById(`img_id`).style.backgroundImage = "url('/la_loteria/" + _this.state.images[_this.state.card_index].src +".jpg')"
       _this.setState({ card_index:_this.state.card_index + 1})
       //_this.state.card_index = _this.state.card_index + 1
       //this.card_index = _this.state.card_index + 1
@@ -138,9 +138,9 @@ class App extends Component {
                 </h2>
                 <div id = "img_id" className = "img_class"></div>
                 <div className = "cards_footer">
-                  <button  className="start_button" onClick={() => this.change_card()}>Start</button>
-                  <button  className="pause_button" onClick={() => this.pauseTime()}>Pause</button>
-                  <button  className="reset_button" onClick={() => this.resetCards()}>Reset</button>
+                  <button  className="start_button" onClick={() => this.change_card()}>START</button>
+                  <button  className="pause_button" onClick={() => this.pauseTime()}>PAUSE</button>
+                  <button  className="reset_button" onClick={() => this.resetCards()}>RESET</button>
                 </div>
               </div>
             );
