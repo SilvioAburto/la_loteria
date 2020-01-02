@@ -88,14 +88,27 @@ class App extends Component {
       console.log("All cards have been used")
     } else{
     
+      const soundEffect = new Audio();
+
+      // onClick of first interaction on page before I need the sounds
+      soundEffect.play();
+
+      // later on when you actually want to play a sound at any point without user interaction
+      soundEffect.src = 'path/to/file.mp3';
+      soundEffect.play();
+    
     _this.state.images = shuffle(_this.state.images)
     _this.countdown = setInterval(function(){
       //alert("Hello Silvio");
       //console.log(this.card_index);
       console.log(_this.state.card_index)
       console.log(_this.state.images.length)
-      let card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3");
+      const card_audio = new Audio()
       card_audio.play();
+      card_audio.src = "/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3"
+      card_audio.play();
+      //let card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3");
+      //card_audio.play();
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
