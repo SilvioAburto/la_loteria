@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -87,23 +89,17 @@ class App extends Component {
     if(_this.state.card_index >= _this.state.images.length){
       console.log("All cards have been used")
     } else{
-    
-      const soundEffect = new Audio();
+ 
 
-      // onClick of first interaction on page before I need the sounds
-      soundEffect.play();
-
-      // later on when you actually want to play a sound at any point without user interaction
-      soundEffect.src = 'path/to/file.mp3';
-      soundEffect.play();
-    
     _this.state.images = shuffle(_this.state.images)
     _this.countdown = setInterval(function(){
       //alert("Hello Silvio");
       //console.log(this.card_index);
       console.log(_this.state.card_index)
       console.log(_this.state.images.length)
+
       const card_audio = new Audio()
+      card_audio.load()
       card_audio.play();
       card_audio.src = "/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3"
       card_audio.play();
@@ -132,7 +128,7 @@ class App extends Component {
       secondsElapsed: (this.state.card_index = 0)
     });
     clearInterval(this.countdown);
-    document.getElementById(`img_id`).style.backgroundImage = "url('/loteria_cover.jpg')"
+    document.getElementById(`img_id`).style.backgroundImage = "url('/la_loteria/loteria_cover.jpg')"
 
   }
 
