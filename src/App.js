@@ -67,7 +67,7 @@ class App extends Component {
 }
 
 render_sound(){
-var music = new Audio("la_loteria/la_sirena.mp3")
+var music = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
 
 var chime = new Audio("http://curtastic.com/gold.wav")
 
