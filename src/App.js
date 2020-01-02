@@ -213,12 +213,11 @@ setTimeout(loop, 16)
       //card_audio.src = "la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3";
       //card_audio.load();
       //card_audio.play();
-      
-      var card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3");
+      var card_audio = new Audio("http://curtastic.com/nightmare.mp3")
+      //var card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3");
       var AllAudio = []
       AllAudio.push(card_audio)
       card_audio.play()
-
       card_audio.pause()
       card_audio.currentTime = 0
       AllAudio = null
