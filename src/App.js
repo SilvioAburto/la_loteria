@@ -67,7 +67,7 @@ class App extends Component {
 }
 
 render_sound(){
-  var music = new Audio("http://curtastic.com/nightmare.mp3")
+var music = new Audio("http://curtastic.com/nightmare.mp3")
 
 var chime = new Audio("http://curtastic.com/gold.wav")
 
@@ -208,13 +208,21 @@ setTimeout(loop, 16)
       console.log(_this.state.card_index)
       console.log(_this.state.images.length)
 
-      const card_audio = new Audio()
-      card_audio.play();
-      card_audio.src = "la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3";
-      card_audio.load();
-      card_audio.play();
-      //let card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3");
+      //const card_audio = new Audio()
       //card_audio.play();
+      //card_audio.src = "la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3";
+      //card_audio.load();
+      //card_audio.play();
+      
+      var card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3");
+      var AllAudio = []
+      AllAudio.push(card_audio)
+      card_audio.play()
+
+      card_audio.pause()
+      card_audio.currentTime = 0
+      AllAudio = null
+      card_audio.play();
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
