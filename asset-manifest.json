@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/la_loteria/static/css/main.35548d69.chunk.css",
-    "main.js": "/la_loteria/static/js/main.1d1f0b31.chunk.js",
-    "main.js.map": "/la_loteria/static/js/main.1d1f0b31.chunk.js.map",
+    "main.js": "/la_loteria/static/js/main.feee6317.chunk.js",
+    "main.js.map": "/la_loteria/static/js/main.feee6317.chunk.js.map",
     "runtime-main.js": "/la_loteria/static/js/runtime-main.21f8f2e7.js",
     "runtime-main.js.map": "/la_loteria/static/js/runtime-main.21f8f2e7.js.map",
     "static/js/2.ae23b39f.chunk.js": "/la_loteria/static/js/2.ae23b39f.chunk.js",
     "static/js/2.ae23b39f.chunk.js.map": "/la_loteria/static/js/2.ae23b39f.chunk.js.map",
     "index.html": "/la_loteria/index.html",
-    "precache-manifest.e8c27a845e77c4dd5ba6209e214ea5f0.js": "/la_loteria/precache-manifest.e8c27a845e77c4dd5ba6209e214ea5f0.js",
+    "precache-manifest.99056a2e738662ccac04eea73dd75f4d.js": "/la_loteria/precache-manifest.99056a2e738662ccac04eea73dd75f4d.js",
     "service-worker.js": "/la_loteria/service-worker.js",
     "static/css/main.35548d69.chunk.css.map": "/la_loteria/static/css/main.35548d69.chunk.css.map",
     "static/js/2.ae23b39f.chunk.js.LICENSE": "/la_loteria/static/js/2.ae23b39f.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.21f8f2e7.js",
     "static/js/2.ae23b39f.chunk.js",
     "static/css/main.35548d69.chunk.css",
-    "static/js/main.1d1f0b31.chunk.js"
+    "static/js/main.feee6317.chunk.js"
   ]
 }
