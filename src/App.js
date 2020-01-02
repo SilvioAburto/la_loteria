@@ -2,9 +2,8 @@
 import React, { Component } from 'react';
 import './App.css';
 
-const render_sound = (sound_url) => {
-  var music = new Audio(sound_url)
-  
+const render_sound = () => {
+  var music = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
   //var chime = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
   
   var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
@@ -233,7 +232,7 @@ class App extends Component {
             return (
               <div className="App">
                 <div className="title">La Loteria</div>
-                <button  className="play_button" onClick={() => this.render_sound()}>Play</button>
+                <button  className="play_button" onClick={() => render_sound()}>Play</button>
                 <h2>
                   {this.getCardIndex()}/{this.imageLength()}
                 </h2>
