@@ -99,9 +99,9 @@ class App extends Component {
       console.log(_this.state.images.length)
 
       const card_audio = new Audio()
-      card_audio.load()
       card_audio.play();
-      card_audio.src = "/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3"
+      card_audio.src = "la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3";
+      card_audio.load();
       card_audio.play();
       //let card_audio = new Audio("/la_loteria/"+_this.state.images[_this.state.card_index].src + ".mp3");
       //card_audio.play();
