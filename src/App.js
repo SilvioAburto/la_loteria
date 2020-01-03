@@ -186,13 +186,12 @@ class App extends Component {
       }
       // We should be able to play music delayed now (not during the tap event).
       //messagediv.innerHTML = "Music starts in 2 seconds..."
-      //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
-      music.play()
-      
+      //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"      
     }  
+    music.play()
       //Add this back if you want to listen to last sound
-      //document.body.addEventListener('touchstart', tapped, false)
-      //document.body.addEventListener('click', tapped, false)
+     document.body.addEventListener('touchstart', tapped, false)
+     document.body.addEventListener('click', tapped, false)
       
       //Stop Function
       var stop = function() {
