@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import './App.css';
 
-//Render Sound works on its own on ios but not when called by 
 const render_sound = () => {
   console.log("function playing")
   var music = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
@@ -15,13 +14,19 @@ const render_sound = () => {
   
   var tapped = function() {
   // Play all audio files on the first tap and stop them immediately.
+  
   if(allAudio) {
-    for(var audio of allAudio) {
-      audio.play()
-      audio.pause()
-      audio.currentTime = 0
-    }
-
+  
+  for(var audio of allAudio) {
+  
+    audio.play()
+  
+    audio.pause()
+  
+    audio.currentTime = 0
+  
+  }
+  
   allAudio = null
   
   }
@@ -30,21 +35,31 @@ const render_sound = () => {
   //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
   music.play()
   
-}  
+}
+
+  
   //Add this back if you want to listen to last sound
   //document.body.addEventListener('touchstart', tapped, false)
   //document.body.addEventListener('click', tapped, false)
   
+  
   //Stop Function
   var stop = function() {
-    music.pause()
-    loop = null
-    document.body.removeEventListener('touchstart', tapped, false)
-    document.body.removeEventListener('click', tapped, false)
+  
+  music.pause()
+  
+  loop = null
+  
+  document.body.removeEventListener('touchstart', tapped, false)
+  
+  document.body.removeEventListener('click', tapped, false)
   
   }
   
+  
+  
   // Check if audio starts already unlocked by playing a blank wav.
+  
   nothing.play().then(function() {
   
   //lockeddiv.innerHTML = "Audio started unlocked!"
@@ -54,7 +69,7 @@ const render_sound = () => {
   //lockeddiv.innerHTML = "Audio started locked :("
   })
   
-  var loop = function() {
+  var run = function() {
   
   music.play().then(function(){
   
@@ -64,8 +79,10 @@ const render_sound = () => {
   
   }
   
-    loop()
+    run()
   }
+  
+  
   
 
 function shuffle(array) {
@@ -130,7 +147,6 @@ class App extends Component {
     };
 }
 
-
   getCardIndex(){
     return(this.state.card_index)
   }
@@ -163,67 +179,7 @@ class App extends Component {
       //console.log(this.card_index);
       console.log(_this.state.card_index)
       console.log(_this.state.images.length)
-      console.log("function playing")
-      var music = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
-      //var chime = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3") 
-      var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
-      var allAudio = []
-      allAudio.push(music)
-      
-      //allAudio.push(chime)
-      
-      var tapped = function() {
-      // Play all audio files on the first tap and stop them immediately.
-      if(allAudio) {
-        for(var audio of allAudio) {
-          audio.play()
-          audio.pause()
-          audio.currentTime = 0
-        }
-    
-      allAudio = null
-      
-      }
-      // We should be able to play music delayed now (not during the tap event).
-      //messagediv.innerHTML = "Music starts in 2 seconds..."
-      //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
-      music.play()
-      
-    }  
-      //Add this back if you want to listen to last sound
-      //document.body.addEventListener('touchstart', tapped, false)
-      //document.body.addEventListener('click', tapped, false)
-      
-      //Stop Function
-      var stop = function() {
-        music.pause()
-        loop = null
-        document.body.removeEventListener('touchstart', tapped, false)
-        document.body.removeEventListener('click', tapped, false)
-      
-      }
-      
-      // Check if audio starts already unlocked by playing a blank wav.
-      nothing.play().then(function() {
-      
-      //lockeddiv.innerHTML = "Audio started unlocked!"
-      
-      }).catch(function(){
-      
-      //lockeddiv.innerHTML = "Audio started locked :("
-      })
-      
-      var loop = function() {
-      
-      music.play().then(function(){
-      
-      //	lockeddiv.innerHTML = "Audio is now unlocked!"
-      
-      })  
-      
-      }
-      
-      loop()
+      render_sound()
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
