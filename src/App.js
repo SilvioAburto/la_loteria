@@ -156,7 +156,7 @@ class App extends Component {
       console.log("All cards have been used")
     } else{
  
-
+    render_sound();
     _this.state.images = shuffle(_this.state.images)
     _this.countdown = setInterval(function(){
       //alert("Hello Silvio");
@@ -188,7 +188,7 @@ class App extends Component {
       //messagediv.innerHTML = "Music starts in 2 seconds..."
       //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"      
     }  
-    music.play()
+    //music.play()
       //Add this back if you want to listen to last sound
      document.body.addEventListener('touchstart', tapped, false)
      document.body.addEventListener('click', tapped, false)
@@ -222,7 +222,7 @@ class App extends Component {
       
       }
       
-      loop()
+      //loop()
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
@@ -260,17 +260,16 @@ class App extends Component {
             return (
               <div className="App">
                 <div className="title">La Loteria</div>
-                <button  className="play_button" onClick={() => render_sound()}>Play</button>
-                <h2>
+                <div>
                   {this.getCardIndex()}/{this.imageLength()}
-                </h2>
+                </div>
                 <div id = "img_id" className = "img_class"></div>
                 <div className = "cards_footer">
-
                   <button  className="start_button" onClick={() => this.change_card()}>START</button>
                   <button  className="pause_button" onClick={() => this.pauseTime()}>PAUSE</button>
                   <button  className="reset_button" onClick={() => this.resetCards()}>RESET</button>
                 </div>
+                <button  className="play_button" onClick={() => render_sound()}>Play</button>
               </div>
             );
           }
