@@ -155,20 +155,30 @@ class App extends Component {
     if(_this.state.card_index >= _this.state.images.length){
       console.log("All cards have been used")
     } else{
-    
+      //shuffle the card order 
+      _this.state.images = shuffle(_this.state.images)
+
+      var allAudio = [];
+      for(var i = 0; i <_this.state.images.length; i++){
+        allAudio[i] = new Audio("https://silvioaburto.github.io/la_loteria/" +_this.state.images[i].src +".mp3")
+        console.log(allAudio)
+      }
       console.log("function playing")
-      var music = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
-      //var chime = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3") 
+/*       var la_sirena_sound = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
+      var el_gallo_sound = new Audio("https://silvioaburto.github.io/la_loteria/el_gallo.mp3")
+      var la_dama_sound = new Audio("https://silvioaburto.github.io/la_loteria/la_dama.mp3")
       var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
       var allAudio = []
-      allAudio.push(music)
+      allAudio.push(la_sirena_sound)
+      allAudio.push(el_gallo_sound) */
       
       //allAudio.push(chime)
-      
+      var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
       var tapped = function() {
       // Play all audio files on the first tap and stop them immediately.
       if(allAudio) {
         for(var audio of allAudio) {
+          //console.log()
           audio.play()
           audio.pause()
           audio.currentTime = 0
@@ -180,19 +190,19 @@ class App extends Component {
       // We should be able to play music delayed now (not during the tap event).
       //messagediv.innerHTML = "Music starts in 2 seconds..."
       //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
-      music.play()
+      //music.play()
       
     }  
       //Add this back if you want to listen to last sound
-      //document.body.addEventListener('touchstart', tapped, false)
-      //document.body.addEventListener('click', tapped, false)
+      document.body.addEventListener('touchstart', tapped, false)
+      document.body.addEventListener('click', tapped, false)
       
       //Stop Function
       var stop = function() {
-        music.pause()
-        loop = null
-        document.body.removeEventListener('touchstart', tapped, false)
-        document.body.removeEventListener('click', tapped, false)
+        //la_sirena_sound.pause()
+        play_card_sound = null
+        //document.body.removeEventListener('touchstart', tapped, false)
+        //document.body.removeEventListener('click', tapped, false)
       
       }
       
@@ -206,13 +216,9 @@ class App extends Component {
       //lockeddiv.innerHTML = "Audio started locked :("
       })
       
-      var loop = function() {
+      var play_card_sound = function(audio_index) {
       
-      music.play().then(function(){
-      
-      //	lockeddiv.innerHTML = "Audio is now unlocked!"
-      
-      })  
+      allAudio[audio_index].play()
       
       }
     //Update card every 3 seconds
@@ -222,7 +228,7 @@ class App extends Component {
       console.log("Index:" + _this.state.card_index) //log the card index
       console.log("Length:" + _this.state.images.length) //log card array length
 
-      loop();
+      play_card_sound(_this.state.card_index);
       //render_sound();
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
