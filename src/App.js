@@ -400,7 +400,7 @@ class App extends Component {
 
       var allAudio = [];
       for(var i = 0; i <_this.state.images.length; i++){
-        allAudio[i] = new Audio("https://silvioaburto.github.io/la_loteria/" +_this.state.images[i].src +".mp3")
+        allAudio[i] = new Audio("https://silvioaburto.github.io/la_loteria/sounds/" +_this.state.images[i].src +".mp3")
         console.log(allAudio)
       }
       console.log("function playing")
@@ -475,7 +475,7 @@ class App extends Component {
       //To change class
       //document.getElementById(`img_id`).className = 
       // img_src;
-      document.getElementById(`img_id`).style.backgroundImage = "url('/img/" + _this.state.images[_this.state.card_index].src +".jpg')"
+      document.getElementById(`img_id`).style.backgroundImage = "url('https://silvioaburto.github.io/la_loteria/img/" + _this.state.images[_this.state.card_index].src +".jpg')"
 
       _this.setState({ card_index:_this.state.card_index + 1})
       //_this.state.card_index = _this.state.card_index + 1
@@ -495,7 +495,7 @@ class App extends Component {
       secondsElapsed: (this.state.card_index = 0)
     });
     clearInterval(this.countdown);
-    document.getElementById(`img_id`).style.backgroundImage = "url('/la_loteria/loteria_cover.jpg')"
+    document.getElementById(`img_id`).style.backgroundImage = "url('https://silvioaburto.github.io/la_loteria/img/loteria_cover.jpg')"
 
   }
 
