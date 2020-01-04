@@ -508,17 +508,15 @@ class App extends Component {
   render(){
             return (
               <div className="App">
-                <div className="title">La Loteria</div>
-                <div>
+                <div id = "img_id" className = "img_class"> 
+                <div className = "card_index">
                   {this.getCardIndex()}/{this.imageLength()}
-                </div>
-                <div id = "img_id" className = "img_class"></div>
+                </div></div>
                 <div className = "cards_footer">
                   <button  className="start_button" onClick={() => this.change_card()}>START</button>
                   <button  className="pause_button" onClick={() => this.pauseTime()}>PAUSE</button>
                   <button  className="reset_button" onClick={() => this.resetCards()}>RESET</button>
                 </div>
-                <button  className="play_button" onClick={() => render_sound()}>Play</button>
               </div>
             );
           }

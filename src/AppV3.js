@@ -212,7 +212,6 @@ class App extends Component {
   render(){
             return (
               <div className="App">
-                <div className="title">La Loteria</div>
                 <button  className="play_button" onClick={() => render_sound()}>Play</button>
                 <h2>
                   {this.getCardIndex()}/{this.imageLength()}
