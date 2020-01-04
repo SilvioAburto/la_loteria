@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/la_loteria/static/css/main.35548d69.chunk.css",
-    "main.js": "/la_loteria/static/js/main.487ad100.chunk.js",
-    "main.js.map": "/la_loteria/static/js/main.487ad100.chunk.js.map",
+    "main.css": "/la_loteria/static/css/main.e44f51c6.chunk.css",
+    "main.js": "/la_loteria/static/js/main.535ff727.chunk.js",
+    "main.js.map": "/la_loteria/static/js/main.535ff727.chunk.js.map",
     "runtime-main.js": "/la_loteria/static/js/runtime-main.21f8f2e7.js",
     "runtime-main.js.map": "/la_loteria/static/js/runtime-main.21f8f2e7.js.map",
     "static/js/2.ae23b39f.chunk.js": "/la_loteria/static/js/2.ae23b39f.chunk.js",
     "static/js/2.ae23b39f.chunk.js.map": "/la_loteria/static/js/2.ae23b39f.chunk.js.map",
     "index.html": "/la_loteria/index.html",
-    "precache-manifest.b2762f538624dbb6f9ff17f71a041a06.js": "/la_loteria/precache-manifest.b2762f538624dbb6f9ff17f71a041a06.js",
+    "precache-manifest.a0d7b9c66626ea00a273b16015b65664.js": "/la_loteria/precache-manifest.a0d7b9c66626ea00a273b16015b65664.js",
     "service-worker.js": "/la_loteria/service-worker.js",
-    "static/css/main.35548d69.chunk.css.map": "/la_loteria/static/css/main.35548d69.chunk.css.map",
+    "static/css/main.e44f51c6.chunk.css.map": "/la_loteria/static/css/main.e44f51c6.chunk.css.map",
     "static/js/2.ae23b39f.chunk.js.LICENSE": "/la_loteria/static/js/2.ae23b39f.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.21f8f2e7.js",
     "static/js/2.ae23b39f.chunk.js",
-    "static/css/main.35548d69.chunk.css",
-    "static/js/main.487ad100.chunk.js"
+    "static/css/main.e44f51c6.chunk.css",
+    "static/js/main.535ff727.chunk.js"
   ]
 }
