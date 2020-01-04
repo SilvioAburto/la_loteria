@@ -16,16 +16,12 @@ const render_sound = () => {
   // Play all audio files on the first tap and stop them immediately.
   
   if(allAudio) {
-  
-  for(var audio of allAudio) {
-  
-    audio.play()
-  
-    audio.pause()
-  
-    audio.currentTime = 0
-  
-  }
+    for(var audio of allAudio) {
+      audio.play()
+      audio.pause()
+      audio.currentTime = 0
+    
+    }
   
   allAudio = null
   
@@ -185,7 +181,7 @@ class App extends Component {
       //To change class
       //document.getElementById(`img_id`).className = 
       // img_src;
-      document.getElementById(`img_id`).style.backgroundImage = "url('/la_loteria/" + _this.state.images[_this.state.card_index].src +".jpg')"
+      document.getElementById(`img_id`).style.backgroundImage = "url('https://silvioaburto.github.io/la_loteria/img/" + _this.state.images[_this.state.card_index].src +".jpg')"
       _this.setState({ card_index:_this.state.card_index + 1})
       //_this.state.card_index = _this.state.card_index + 1
       //this.card_index = _this.state.card_index + 1
@@ -203,7 +199,7 @@ class App extends Component {
       secondsElapsed: (this.state.card_index = 0)
     });
     clearInterval(this.countdown);
-    document.getElementById(`img_id`).style.backgroundImage = "url('/la_loteria/loteria_cover.jpg')"
+    document.getElementById(`img_id`).style.backgroundImage = "url('https://silvioaburto.github.io/la_loteria/img/loteria_cover.jpg')"
 
   }
 

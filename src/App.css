@@ -99,7 +99,7 @@
 
 
 #img_id {
-  background-image: url(/la_loteria/loteria_cover.jpg);
+  background-image: url(/img/loteria_cover.jpg);
   float: none;
   position: absolute;
   margin-left:37.5%;
@@ -115,28 +115,24 @@
   background-repeat: no-repeat;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   #img_id {
-    width:70%;
-    height:75%;
-    margin-left:15%;
-    margin-right:15%;
+    width:100%;
+    height:100%;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
   .cards_footer {
     float: none;
     position: absolute;
-    bottom:5%;
+    bottom:0;
     padding: 2px;
     color: #23304b;
     background-color:powderblue;
     border: black solid 3.0px;
-    width:70%;
+    width:100%;
     height:5%;
-    margin-left:15%;
-    margin-right:15%;
     background-size: 100% 100%;
   }
 }
