@@ -64,7 +64,7 @@ const render_sound = () => {
   
   }
   
-    loop()
+    //loop()
   }
   
 
@@ -155,14 +155,7 @@ class App extends Component {
     if(_this.state.card_index >= _this.state.images.length){
       console.log("All cards have been used")
     } else{
- 
-    render_sound();
-    _this.state.images = shuffle(_this.state.images)
-    _this.countdown = setInterval(function(){
-      //alert("Hello Silvio");
-      //console.log(this.card_index);
-      console.log(_this.state.card_index)
-      console.log(_this.state.images.length)
+    
       console.log("function playing")
       var music = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
       //var chime = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3") 
@@ -186,12 +179,13 @@ class App extends Component {
       }
       // We should be able to play music delayed now (not during the tap event).
       //messagediv.innerHTML = "Music starts in 2 seconds..."
-      //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"      
+      //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
+      music.play()
+      
     }  
-    //music.play()
       //Add this back if you want to listen to last sound
-     document.body.addEventListener('touchstart', tapped, false)
-     document.body.addEventListener('click', tapped, false)
+      //document.body.addEventListener('touchstart', tapped, false)
+      //document.body.addEventListener('click', tapped, false)
       
       //Stop Function
       var stop = function() {
@@ -221,14 +215,22 @@ class App extends Component {
       })  
       
       }
-      
-      //loop()
+    //Update card every 3 seconds
+    _this.countdown = setInterval(function(){
+      //alert("Hello Silvio");
+      //console.log(this.card_index);
+      console.log("Index:" + _this.state.card_index) //log the card index
+      console.log("Length:" + _this.state.images.length) //log card array length
+
+      loop();
+      //render_sound();
       const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
       //document.getElementById(`img_id`).className = 
       // img_src;
-      document.getElementById(`img_id`).style.backgroundImage = "url('/la_loteria/" + _this.state.images[_this.state.card_index].src +".jpg')"
+      document.getElementById(`img_id`).style.backgroundImage = "url('/" + _this.state.images[_this.state.card_index].src +".jpg')"
+
       _this.setState({ card_index:_this.state.card_index + 1})
       //_this.state.card_index = _this.state.card_index + 1
       //this.card_index = _this.state.card_index + 1
@@ -237,6 +239,7 @@ class App extends Component {
         clearInterval(_this.countdown);
       }
     },3000)
+
   }
 
   } 
