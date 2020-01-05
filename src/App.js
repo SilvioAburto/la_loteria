@@ -1,72 +1,9 @@
 
 import React, { Component } from 'react';
 import './App.css';
+import {return_cards} from './loteria_functions.js'
 
-//Render Sound works on its own on ios but not when called by 
-const render_sound = () => {
-  console.log("function playing")
-  var music = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
-  //var chime = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3") 
-  var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
-  var allAudio = []
-  allAudio.push(music)
-  
-  //allAudio.push(chime)
-  
-  var tapped = function() {
-  // Play all audio files on the first tap and stop them immediately.
-  if(allAudio) {
-    for(var audio of allAudio) {
-      audio.play()
-      audio.pause()
-      audio.currentTime = 0
-    }
 
-  allAudio = null
-  
-  }
-  // We should be able to play music delayed now (not during the tap event).
-  //messagediv.innerHTML = "Music starts in 2 seconds..."
-  //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
-  music.play()
-  
-}  
-  //Add this back if you want to listen to last sound
-  //document.body.addEventListener('touchstart', tapped, false)
-  //document.body.addEventListener('click', tapped, false)
-  
-  //Stop Function
-  var stop = function() {
-    music.pause()
-    loop = null
-    document.body.removeEventListener('touchstart', tapped, false)
-    document.body.removeEventListener('click', tapped, false)
-  
-  }
-  
-  // Check if audio starts already unlocked by playing a blank wav.
-  nothing.play().then(function() {
-  
-  //lockeddiv.innerHTML = "Audio started unlocked!"
-  
-  }).catch(function(){
-  
-  //lockeddiv.innerHTML = "Audio started locked :("
-  })
-  
-  var loop = function() {
-  
-  music.play().then(function(){
-  
-  //	lockeddiv.innerHTML = "Audio is now unlocked!"
-  
-  })  
-  
-  }
-  
-    //loop()
-  }
-  
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -94,281 +31,12 @@ class App extends Component {
     this.state = {
       secondsElapsed: 0, //time in seconds
       isActive: false,
-      images :[
-        {
-          id: 1,
-          name: "El Gallo",
-          src: "el_gallo"
-        },
-        {
-          id: 2,
-          name: "El Diablito",
-          src: "el_diablito"
-        },
-        {
-          id: 3,
-          name: "La Dama",
-          src: "la_dama"
-        },
-        {
-          id: 4,
-          name: "El Catrin",
-          src: "el_catrin"
-        },
-        {
-          id: 5,
-          name: "El Paraguas",
-          src: "el_paraguas"
-        },
-        {
-          id: 6,
-          name: "La Sirena",
-          src: "la_sirena"
-        },
-        {
-          id: 7,
-          name: "La escalera",
-          src: "la_escalera"
-        },
-        {
-          id: 8,
-          name: "La botella",
-          src: "la_botella"
-        },
-        {
-          id: 9,
-          name: "El barril",
-          src: "el_barril"
-        },
-        {
-          id: 10,
-          name: "El arbol",
-          src: "el_arbol"
-        },
-        {
-          id: 11,
-          name: "El melon",
-          src: "el_melon"
-        },
-        {
-          id: 12,
-          name: "El valiente",
-          src: "el_valiente"
-        },
-        {
-          id: 13,
-          name: "El gorrito",
-          src: "el_gorrito"
-        },
-        {
-          id: 14,
-          name: "La muerte",
-          src: "la_muerte"
-        },
-        {
-          id: 15,
-          name: "La pera",
-          src: "la_pera"
-        },
-        {
-          id: 16,
-          name: "La bandera",
-          src: "la_bandera"
-        },
-        {
-          id: 17,
-          name: "El bandolon",
-          src: "el_bandolon"
-        },
-        {
-          id: 18,
-          name: "El violoncello",
-          src: "el_violoncello"
-        },
-        {
-          id: 19,
-          name: "La garza",
-          src: "la_garza"
-        },
-        {
-          id: 20,
-          name: "El pajaro",
-          src: "el_pajaro"
-        },
-        {
-          id: 21,
-          name: "El Gallo",
-          src: "el_gallo"
-        },
-        {
-          id: 22,
-          name: "El Diablito",
-          src: "el_diablito"
-        },
-        {
-          id: 23,
-          name: "La Dama",
-          src: "la_dama"
-        },
-        {
-          id: 24,
-          name: "El Catrin",
-          src: "el_catrin"
-        },
-        {
-          id: 25,
-          name: "El Paraguas",
-          src: "el_paraguas"
-        },
-        {
-          id: 26,
-          name: "La Sirena",
-          src: "la_sirena"
-        },
-        {
-          id: 27,
-          name: "La escalera",
-          src: "la_escalera"
-        },
-        {
-          id: 28,
-          name: "La botella",
-          src: "la_botella"
-        },
-        {
-          id: 29,
-          name: "El barril",
-          src: "el_barril"
-        },
-        {
-          id: 30,
-          name: "El arbol",
-          src: "el_arbol"
-        },
-        {
-          id: 31,
-          name: "El melon",
-          src: "el_melon"
-        },
-        {
-          id: 32,
-          name: "El valiente",
-          src: "el_valiente"
-        },
-        {
-          id: 33,
-          name: "El gorrito",
-          src: "el_gorrito"
-        },
-        {
-          id: 34,
-          name: "La muerte",
-          src: "la_muerte"
-        },
-        {
-          id: 35,
-          name: "La pera",
-          src: "la_pera"
-        },
-        {
-          id: 36,
-          name: "La bandera",
-          src: "la_bandera"
-        },
-        {
-          id: 37,
-          name: "El bandolon",
-          src: "el_bandolon"
-        },
-        {
-          id: 38,
-          name: "El violoncello",
-          src: "el_violoncello"
-        },
-        {
-          id: 39,
-          name: "La garza",
-          src: "la_garza"
-        },
-        {
-          id: 40,
-          name: "El pajaro",
-          src: "el_pajaro"
-        },
-        {
-          id: 41,
-          name: "El Gallo",
-          src: "el_gallo"
-        },
-        {
-          id: 42,
-          name: "El Diablito",
-          src: "el_diablito"
-        },
-        {
-          id: 43,
-          name: "La Dama",
-          src: "la_dama"
-        },
-        {
-          id: 44,
-          name: "El Catrin",
-          src: "el_catrin"
-        },
-        {
-          id: 45,
-          name: "El Paraguas",
-          src: "el_paraguas"
-        },
-        {
-          id: 46,
-          name: "La Sirena",
-          src: "la_sirena"
-        },
-        {
-          id: 47,
-          name: "La escalera",
-          src: "la_escalera"
-        },
-        {
-          id: 48,
-          name: "La botella",
-          src: "la_botella"
-        },
-        {
-          id: 49,
-          name: "El barril",
-          src: "el_barril"
-        },
-        {
-          id: 50,
-          name: "El arbol",
-          src: "el_arbol"
-        },
-        {
-          id: 51,
-          name: "El melon",
-          src: "el_melon"
-        },
-        {
-          id: 52,
-          name: "El valiente",
-          src: "el_valiente"
-        },
-        {
-          id: 53,
-          name: "El gorrito",
-          src: "el_gorrito"
-        },
-        {
-          id: 54,
-          name: "La muerte",
-          src: "la_muerte"
-        },
-      ],
+      images : return_cards(),
       card_index: 0
     };
 }
+
+
 
 
   getCardIndex(){
@@ -395,72 +63,68 @@ class App extends Component {
     if(_this.state.card_index >= _this.state.images.length){
       console.log("All cards have been used")
     } else{
-      //shuffle the card order 
-      _this.state.images = shuffle(_this.state.images)
 
-      var allAudio = [];
-      for(var i = 0; i <_this.state.images.length; i++){
-        allAudio[i] = new Audio("https://silvioaburto.github.io/la_loteria/sounds/" +_this.state.images[i].src +".mp3")
-        console.log(allAudio)
+      if(_this.state.card_index > 0){
+        console.log("Game in progress, do not reshuffle")
       }
-      console.log("function playing")
-/*       var la_sirena_sound = new Audio("https://silvioaburto.github.io/la_loteria/la_sirena.mp3")
-      var el_gallo_sound = new Audio("https://silvioaburto.github.io/la_loteria/el_gallo.mp3")
-      var la_dama_sound = new Audio("https://silvioaburto.github.io/la_loteria/la_dama.mp3")
-      var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
-      var allAudio = []
-      allAudio.push(la_sirena_sound)
-      allAudio.push(el_gallo_sound) */
-      
-      //allAudio.push(chime)
-      var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
-      var tapped = function() {
-      // Play all audio files on the first tap and stop them immediately.
-      if(allAudio) {
-        for(var audio of allAudio) {
-          //console.log()
-          audio.play()
-          audio.pause()
-          audio.currentTime = 0
+      else{
+        //shuffle the card order 
+        _this.state.images = shuffle(_this.state.images)
+
+        var allAudio = [];
+        var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
+        for(var i = 0; i <_this.state.images.length; i++){
+          allAudio[i] = new Audio("https://silvioaburto.github.io/la_loteria/sounds/" +_this.state.images[i].src +".mp3")
+          console.log(allAudio)
         }
-    
-      allAudio = null
+        //var tapped = function() {
+        // Play all audio files on the first tap and stop them immediately.
+        if(allAudio) {
+          for(var audio of allAudio) {
+            //console.log()
+            audio.play()
+            audio.pause()
+            audio.currentTime = 0
+          }
       
-      }
-      // We should be able to play music delayed now (not during the tap event).
-      //messagediv.innerHTML = "Music starts in 2 seconds..."
-      //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
-      //music.play()
-      
-    }  
-      //Add this back if you want to listen to last sound
-      document.body.addEventListener('touchstart', tapped, false)
-      document.body.addEventListener('click', tapped, false)
-      
-      //Stop Function
-      var stop = function() {
-        //la_sirena_sound.pause()
-        play_card_sound = null
-        //document.body.removeEventListener('touchstart', tapped, false)
-        //document.body.removeEventListener('click', tapped, false)
-      
-      }
-      
-      // Check if audio starts already unlocked by playing a blank wav.
-      nothing.play().then(function() {
-      
-      //lockeddiv.innerHTML = "Audio started unlocked!"
-      
-      }).catch(function(){
-      
-      //lockeddiv.innerHTML = "Audio started locked :("
-      })
-      
-      var play_card_sound = function(audio_index) {
-      
-      allAudio[audio_index].play()
-      
-      }
+        //allAudio = null
+        
+        }
+        // We should be able to play music delayed now (not during the tap event).
+        //messagediv.innerHTML = "Music starts in 2 seconds..."
+        //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
+        //music.play()
+        
+      //}  
+      //tapped()
+        //Add this back if you want to listen to last sound
+        //document.body.addEventListener('touchstart', tapped, false)
+        //document.body.addEventListener('click', tapped, false)
+        
+        //Stop Function
+/*         var stop = function() {
+          //la_sirena_sound.pause()
+          play_card_sound = null
+          //document.body.removeEventListener('touchstart', tapped, false)
+          //document.body.removeEventListener('click', tapped, false)    
+        } */
+        
+        // Check if audio starts already unlocked by playing a blank wav.
+        nothing.play().then(function() {
+        
+        //lockeddiv.innerHTML = "Audio started unlocked!"
+        
+        }).catch(function(){
+        
+        //lockeddiv.innerHTML = "Audio started locked :("
+        })
+        
+        var play_card_sound = function(audio_index) {
+        
+        allAudio[audio_index].play()
+        
+        }
+    }
     //Update card every 3 seconds
     _this.countdown = setInterval(function(){
       //alert("Hello Silvio");
@@ -470,7 +134,7 @@ class App extends Component {
 
       play_card_sound(_this.state.card_index);
       //render_sound();
-      const div = document.querySelector(`img_id`);
+      //const div = document.querySelector(`img_id`);
       //const img_src = images[this.card_index].src
       //To change class
       //document.getElementById(`img_id`).className = 
