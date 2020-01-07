@@ -105,38 +105,38 @@ export function return_cards(){
         },
         {
           id: 21,
-          name: "El Gallo",
-          src: "el_gallo"
+          name: "La mano",
+          src: "la_mano"
         },
         {
           id: 22,
-          name: "El Diablito",
-          src: "el_diablito"
+          name: "La bota",
+          src: "la_bota"
         },
         {
           id: 23,
-          name: "La Dama",
-          src: "la_dama"
+          name: "La luna",
+          src: "la_luna"
         },
         {
           id: 24,
-          name: "El Catrin",
-          src: "el_catrin"
+          name: "El cotorro",
+          src: "el_cotorro"
         },
         {
           id: 25,
-          name: "El Paraguas",
-          src: "el_paraguas"
+          name: "El borracho",
+          src: "el_borracho"
         },
         {
           id: 26,
-          name: "La Sirena",
-          src: "la_sirena"
+          name: "El negrito",
+          src: "el_negrito"
         },
         {
           id: 27,
-          name: "La escalera",
-          src: "la_escalera"
+          name: "El corazon",
+          src: "el_corazon"
         },
         {
           id: 28,

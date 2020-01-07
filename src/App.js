@@ -29,9 +29,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      secondsElapsed: 0, //time in seconds
       isActive: false,
       images : return_cards(),
+      images_used : [],
       card_index: 0
     };
 }
@@ -58,112 +58,75 @@ class App extends Component {
     return(this.state.images.length)
   }
 
+  filter_used_cards(img_array, img_array_exclude){
+    return(img_array.filter(i => !img_array_exclude.includes(i.id)))
+  }
+
   change_card(){
     var _this = this
+    console.log("Start pressed")
+    console.log("Images used so far" + _this.state.images_used)
+    //shuffle the card order everytime start button is clicked
+    _this.state.images = shuffle(_this.state.images)
+    var allAudio = [];
+    console.log(this.filter_used_cards(_this.state.images, _this.state.images_used).length)
+    //Store all audio into a var array
+    for(var i = 0; i < _this.state.images.length; i++){
+      allAudio[i] = new Audio("https://silvioaburto.github.io/la_loteria/sounds/" +_this.state.images[i].src +".mp3")
+    }
+    //Only load sounds at the beginning of a game
+    if(_this.state.card_index === 0){
+      //Initialize all the audio
+      if(allAudio) {
+        for(var audio of allAudio) {
+          audio.load()
+          audio.pause()
+          audio.currentTime = 0
+        }
+      }
+    }
+    //If all cards have been used do nothing. Game must be restarted
     if(_this.state.card_index >= _this.state.images.length){
       console.log("All cards have been used")
-    } else{
-
-      if(_this.state.card_index > 0){
-        console.log("Game in progress, do not reshuffle")
-      }
-      else{
-        //shuffle the card order 
-        _this.state.images = shuffle(_this.state.images)
-
-        var allAudio = [];
-        var nothing = new Audio("http://touchbasicapp.com/nothing.wav")
-        for(var i = 0; i <_this.state.images.length; i++){
-          allAudio[i] = new Audio("https://silvioaburto.github.io/la_loteria/sounds/" +_this.state.images[i].src +".mp3")
-          console.log(allAudio)
-        }
-        //var tapped = function() {
-        // Play all audio files on the first tap and stop them immediately.
-        if(allAudio) {
-          for(var audio of allAudio) {
-            //console.log()
-            audio.play()
-            audio.pause()
-            audio.currentTime = 0
-          }
-      
-        //allAudio = null
-        
-        }
-        // We should be able to play music delayed now (not during the tap event).
-        //messagediv.innerHTML = "Music starts in 2 seconds..."
-        //messagediv.innerHTML = "Music playing. <button onclick='stop()'>Stop</button>"
-        //music.play()
-        
-      //}  
-      //tapped()
-        //Add this back if you want to listen to last sound
-        //document.body.addEventListener('touchstart', tapped, false)
-        //document.body.addEventListener('click', tapped, false)
-        
-        //Stop Function
-/*         var stop = function() {
-          //la_sirena_sound.pause()
-          play_card_sound = null
-          //document.body.removeEventListener('touchstart', tapped, false)
-          //document.body.removeEventListener('click', tapped, false)    
-        } */
-        
-        // Check if audio starts already unlocked by playing a blank wav.
-        nothing.play().then(function() {
-        
-        //lockeddiv.innerHTML = "Audio started unlocked!"
-        
-        }).catch(function(){
-        
-        //lockeddiv.innerHTML = "Audio started locked :("
-        })
-        
-        var play_card_sound = function(audio_index) {
-        
-        allAudio[audio_index].play()
-        
+    } else{ 
+      //Define card sound function
+      console.log("Game in progress..")     
+      var play_card_sound = function(audio_index) {   
+      allAudio[audio_index].play()
         }
     }
+
     //Update card every 3 seconds
     _this.countdown = setInterval(function(){
       //alert("Hello Silvio");
       //console.log(this.card_index);
       console.log("Index:" + _this.state.card_index) //log the card index
       console.log("Length:" + _this.state.images.length) //log card array length
-
+      //Keep track of used cards 
+      _this.state.images_used.push(_this.state.images[_this.state.card_index].id)
+      //Play current card sound
       play_card_sound(_this.state.card_index);
-      //render_sound();
-      //const div = document.querySelector(`img_id`);
-      //const img_src = images[this.card_index].src
-      //To change class
-      //document.getElementById(`img_id`).className = 
-      // img_src;
+      //Show current card image
       document.getElementById(`img_id`).style.backgroundImage = "url('https://silvioaburto.github.io/la_loteria/img/" + _this.state.images[_this.state.card_index].src +".jpg')"
-
+      //Update card index
       _this.setState({ card_index:_this.state.card_index + 1})
-      //_this.state.card_index = _this.state.card_index + 1
-      //this.card_index = _this.state.card_index + 1
+      //Stop Interval and reset once the current card is equal to the total cards length
       if(_this.state.card_index >= _this.state.images.length){
-        console.log("True")
         clearInterval(_this.countdown);
+        _this.setState({card_index: 0, images_used:[]})
       }
-    },3000)
-
-  }
+    },2000)
 
   } 
 
   resetCards() {
-    this.setState({
-      secondsElapsed: (this.state.card_index = 0)
-    });
+    this.setState({card_index:0, images_used:[]});
     clearInterval(this.countdown);
     document.getElementById(`img_id`).style.backgroundImage = "url('https://silvioaburto.github.io/la_loteria/img/loteria_cover.jpg')"
-
   }
 
   pauseTime() {
+    console.log("Game paused")
     clearInterval(this.countdown);
   }
 
